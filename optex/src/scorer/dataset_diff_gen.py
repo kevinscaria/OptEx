@@ -1,7 +1,7 @@
 import pandas as pd
 from DatasetCartographyForGeneration.cartography import DatasetCartographyGenerativeTask
 
-df = pd.read_csv("./data/task020/all.csv")
+df = pd.read_csv("../../../data/task020/all.csv")
 df["input"] = df["input"].apply(lambda x: x.split("Now complete the following example-\ninput: ")[-1].split("\noutput: ")[0])
 
 dataset_difficulty = DatasetCartographyGenerativeTask(model_id="t5-base", tokenizer_id="t5-base")
